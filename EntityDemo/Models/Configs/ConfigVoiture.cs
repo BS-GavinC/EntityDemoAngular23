@@ -7,6 +7,27 @@ namespace EntityDemo.Models.Configs
     {
         public void Configure(EntityTypeBuilder<Voiture> builder)
         {
+            builder.HasData(new Voiture
+            {
+                Id = 1,
+                Brand = "Tesla",
+                Model = "Model X",
+                Color = "White",
+                Hp = 570,
+                Plate = "IMTESLA"
+
+            },
+            new Voiture
+            {
+                Id = 2,
+                Brand = "BMW",
+                Model = "Serie 1",
+                Color = "Purple",
+                Hp = 120,
+                Plate = "Gossip"
+            }
+            );
+
             builder.HasCheckConstraint("CK_Plate", "[Plate] NOT LIKE '%@%'");
             
             builder.HasKey("Id");

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityDemo.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20230407085019_init")]
+    [Migration("20230407100529_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -59,6 +59,26 @@ namespace EntityDemo.Migrations
                     b.ToTable("Voitures", t =>
                         {
                             t.HasCheckConstraint("CK_Plate", "[Plate] NOT LIKE '%@%'");
+                        });
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Brand = "Tesla",
+                            Color = "White",
+                            Hp = 570,
+                            Model = "Model X",
+                            Plate = "IMTESLA"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Brand = "BMW",
+                            Color = "Purple",
+                            Hp = 120,
+                            Model = "Serie 1",
+                            Plate = "Gossip"
                         });
                 });
 #pragma warning restore 612, 618

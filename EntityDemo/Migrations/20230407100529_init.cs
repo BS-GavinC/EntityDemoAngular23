@@ -2,6 +2,8 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace EntityDemo.Migrations
 {
     /// <inheritdoc />
@@ -26,6 +28,15 @@ namespace EntityDemo.Migrations
                 {
                     table.PrimaryKey("PK_Voitures", x => x.Id);
                     table.CheckConstraint("CK_Plate", "[Plate] NOT LIKE '%@%'");
+                });
+
+            migrationBuilder.InsertData(
+                table: "Voitures",
+                columns: new[] { "Id", "Brand", "Color", "Hp", "Model", "Plate" },
+                values: new object[,]
+                {
+                    { 1, "Tesla", "White", 570, "Model X", "IMTESLA" },
+                    { 2, "BMW", "Purple", 120, "Serie 1", "Gossip" }
                 });
         }
 

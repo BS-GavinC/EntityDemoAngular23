@@ -9,7 +9,7 @@ namespace EntityDemo.Models.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer($"Server=localhost;Database=MyEntityDemoDatabase;Trusted_Connection=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer($"Server=localhost;Database=MyEntityDemoDatabase2;Trusted_Connection=True;TrustServerCertificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

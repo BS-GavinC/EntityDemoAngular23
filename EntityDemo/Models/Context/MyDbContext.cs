@@ -1,4 +1,4 @@
-﻿using EntityDemo.Models.Configs;
+﻿using EntityDemo.Models.Context.Configs;
 using Microsoft.EntityFrameworkCore;
 
 namespace EntityDemo.Models.Context

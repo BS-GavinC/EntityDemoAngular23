@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace EntityDemo.Models.Configs
+namespace EntityDemo.Models.Context.Configs
 {
     public class ConfigVoiture : IEntityTypeConfiguration<Voiture>
     {
@@ -29,7 +29,7 @@ namespace EntityDemo.Models.Configs
             );
 
             builder.HasCheckConstraint("CK_Plate", "[Plate] NOT LIKE '%@%'");
-            
+
             builder.HasKey("Id");
             builder.Property("Brand").IsRequired();
             builder.Property("Brand").HasMaxLength(100);
